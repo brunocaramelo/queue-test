@@ -1,30 +1,32 @@
-EXECUTAR ANTES DA APLICAÇÃO CLIENTE
+RUN BEFORE THE CLIENT APPLICATION
 
-1- Criação do Database (Mysql) executar DUMP de storage/database/create-database.sql
+1- Create the Database (Mysql) run DUMP of storage/database/create-database.sql
 
-2 - Alterar parametros no .env para o Banco DB_CONNECTION=mysql DB_HOST=127.0.0.1 DB_PORT=3306 DB_DATABASE=stock_api DB_USERNAME=root DB_PASSWORD=testes
+2 - Change parameters in .env for the Database DB_CONNECTION=mysql DB_HOST=127.0.0.1 DB_PORT=3306 DB_DATABASE=stock_api DB_USERNAME=root DB_PASSWORD=testes
 
-3 - RODAR migrations e seeds - executar na raiz - php artisan migrate - php artisan db:seed caso queira utilizar a API 
+3 - RUN migrations and seeds - run in the root - php artisan migrate - php artisan db:seed if you want to use the API
 
-4 - Bateria de testes usando sqlite com o comando phpunit na raiz do projeto
-    - Testes de API 
-    - Testes Unitários
+4 - Test battery using sqlite with the phpunit command in the project root
+    - API Tests
+    - Unit Tests
 
-Rotas: 
-    GET - v1/products/ (Listar Produtos)
-    GET - v1/products/{id} (Detalhar Produtos)
-    PUT - v1/products/{id} (Editar Produtos)
-    POST - v1/upload/ (Importar Produtos, Enviar planilha no campo [file] ) 
-    DELETE - v1/products/{id} (Excluir Produtos)
-   
-    GET - v1/upload/check-proccess (Listar Processos)
-    GET - v1/products/check-proccess/{id} (Detalhar Processo)
-    
+Routes:
 
-DRIVER JOB utilizado: database
+    GET - v1/products/ (List Products)
 
-executar
+    GET - v1/products/{id} (Detail Products)
 
-php artisan migrate ;
-php artisan db:seed ;
-php artisan queue:listen
+    PUT - v1/products/{id} (Edit Products)
+    POST - v1/upload/ (Import Products, Send spreadsheet in the [file] field)
+    DELETE - v1/products/{id} (Delete Products)
+    GET - v1/upload/check-proccess (List Processes)
+    GET - v1/products/check-proccess/{id} (Detail Process)
+
+JOB DRIVER used: database
+
+execute
+
+    php artisan migrate ;
+    php artisan db:seed ;
+    php artisan queue:listen
+  
